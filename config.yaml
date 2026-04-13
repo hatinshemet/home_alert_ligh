@@ -1,6 +1,7 @@
 area:
   cities:
     - "רמת גן - מערב"
+    - "גבעתיים"   # Replace with your second city
 
 poll_interval_seconds: 2
 
