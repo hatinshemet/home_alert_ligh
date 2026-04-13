@@ -1,0 +1,12 @@
+venv/
+__pycache__/
+*.pyc
+
+# Tuya wizard output files (contain credentials/device data)
+tinytuya.json
+devices.json
+snapshot.json
+tuya-raw.json
+
+# Local credentials (never commit this)
+secrets.yaml

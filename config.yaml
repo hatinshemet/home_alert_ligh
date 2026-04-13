@@ -1,0 +1,11 @@
+area:
+  cities:
+    - "תל אביב - מרכז"   # Replace with your city in Hebrew (as it appears in the Oref app)
+
+poll_interval_seconds: 2
+
+light:
+  siren_color: [255, 0, 0]        # Red — immediate rocket/missile alert
+  early_warning_color: [255, 140, 0]  # Orange — early warning
+  flash_interval_seconds: 0.5
+  cooldown_seconds: 120           # Keep dim red on for 2 min after alert clears
