@@ -1,0 +1,14 @@
+[Unit]
+Description=Home Alert Light
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+WorkingDirectory=/home/merav/home_alert_ligh
+ExecStart=/home/merav/home_alert_ligh/venv/bin/python main.py
+Restart=always
+RestartSec=5
+User=merav
+
+[Install]
+WantedBy=multi-user.target
