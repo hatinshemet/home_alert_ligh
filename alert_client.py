@@ -1,3 +1,5 @@
+import json
+
 import requests
 
 
@@ -16,15 +18,17 @@ class AlertClient:
         """Returns the alert dict if there is an active alert in our cities, else None."""
         try:
             resp = requests.get(self.API_URL, headers=self.HEADERS, timeout=5)
-            text = resp.text.strip()
+            resp.raise_for_status()
+            text = resp.content.decode("utf-8-sig").strip()
             if not text or text == "{}":
                 return None
-            data = resp.json()
+            data = json.loads(text)
             if not data or "data" not in data:
                 return None
             alert_cities = set(data.get("data", []))
             if self.cities & alert_cities:
                 return data
             return None
-        except Exception:
+        except Exception as e:
+            print(f"[alert] API error: {e}")
             return None
